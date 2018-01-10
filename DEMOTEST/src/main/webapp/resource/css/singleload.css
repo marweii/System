@@ -1,0 +1,117 @@
+.word {
+    font-size : 14pt;
+    font-style : normal;
+    font-weight : bold;
+}
+.margin {
+
+    margin-top : 100px;
+    margin-left : 250px;
+}
+.margin01 {
+    margin-top : 0px;
+    margin-left :620px;
+}
+.margin02 {
+    border-top-width : 2px;
+    border-color : #BBF000;
+    border-right-width : 2px;
+    border-bottom-width : 2px;
+    border-left-width : 2px;
+    border-style : solid;
+}
+.margin03 {
+    border-top-width : 2px;
+    border-color : #BBF000;
+    border-right-width : 2px;
+    border-bottom-width : 2px;
+    border-left-width : 2px;
+    border-style : solid;
+    width : 273px;
+}
+.margin04 {
+    border-top-width : 2px;
+    border-color : #BBF000;
+    border-right-width : 2px;
+    border-bottom-width : 2px;
+    border-left-width : 2px;
+    border-style : solid;
+    width : 273px;
+    margin-top : 100px;
+    margin-left : 300px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    position: relative;
+    top: -36px;
+    left: 260px;
+    height:27px;
+}
+
+.button1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.testfile {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top : 180px;
+    margin-left : 400px;
+}
+.marginsele {
+
+    margin-top : 10px;
+    margin-left : 30px;
+}
+.margintable {
+    margin-top : 10px;
+    margin-left : 30px;
+}
+.margintd {
+    font-style : normal;
+    font-weight : bold;
+    font-size : 14pt;
+}
+.page span{
+    text-decoration: none;
+    border:1px solid #f9d52b;
+    padding:5px 7px;
+    color:#767675
+}
+.textinput{
+    width : 40px;
+    border-top-width : 2px;
+    border-color : #BBF000;
+    border-right-width : 2px;
+    border-bottom-width : 2px;
+    border-left-width : 2px;
+    border-style : solid;
+}
+.pageclass{
+    margin-top : 40px;
+}
+.tdword{
+    font-size : 10pt;
+}

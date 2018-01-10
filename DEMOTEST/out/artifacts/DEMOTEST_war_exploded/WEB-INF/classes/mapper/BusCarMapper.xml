@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiangqn.mapper.BusCarMapper">
+    <resultMap id="BaseResultMap" type="com.jiangqn.model.BusCar">
+        <result column="car_id" jdbcType="VARCHAR" property="car_id" />
+        <result column="car_startstation" jdbcType="VARCHAR" property="car_startstation" />
+        <result column="car_endstation" jdbcType="VARCHAR" property="car_endstation" />
+        <result column="car_paymoney" jdbcType="VARCHAR" property="car_paymoney" />
+        <result column="car_starttime" jdbcType="VARCHAR" property="car_starttime" />
+        <result column="car_endtime" jdbcType="VARCHAR" property="car_endtime" />
+        <result column="car_station" jdbcType="VARCHAR" property="car_station" />
+    </resultMap>
+
+    <insert id="BusCar_ins">
+        INSERT INTO businfo(car_id, car_startstation, car_endstation,car_paymoney,car_starttime,
+        car_endtime,car_station) VALUES (#{car_id},#{car_startstation} , #{car_endstation},
+        #{car_paymoney},#{car_starttime},#{car_endtime},#{car_station});
+
+    </insert>
+    <select id="BusCar_sel" resultMap="BaseResultMap">
+        SELECT *
+        FROM businfo
+        WHERE car_id = #{car_id}
+    </select>
+    <select id="BusCar_selAll" resultMap="BaseResultMap">
+        SELECT *
+        FROM businfo
+    </select>
+    <update id="BusCar_update">
+        UPDATE businfo
+        SET car_startstation = #{car_startstation},car_endstation = #{car_endstation},car_paymoney = #{car_paymoney},car_starttime = #{car_starttime},car_endtime = #{car_endtime},car_station = #{car_station}
+        WHERE car_id = #{car_id}
+    </update>
+    <delete id="BusCar_delete">
+        DELETE from businfo
+        WHERE car_id = #{car_id}
+    </delete>
+    <select id="BusCar_sel10" resultMap="BaseResultMap">
+        SELECT *
+        FROM businfo
+        ORDER BY car_id
+        limit #{page},15
+    </select>
+    <select id="BusCar_select" resultMap="BaseResultMap">
+        SELECT *
+        FROM businfo
+        WHERE car_startstation LIKE #{car_startstation} AND  car_endstation LIKE #{car_endstation} AND car_paymoney LIKE #{car_paymoney} AND car_starttime &gt;= #{car_starttime} AND car_endtime &lt;= #{car_endtime} AND car_station LIKE #{car_station} AND car_id LIKE #{car_id} ORDER BY car_id limit 15
+    </select>
+    <select id="BusCar_selectcount" resultMap="BaseResultMap">
+        SELECT *
+        FROM businfo
+        WHERE car_startstation LIKE #{car_startstation} AND  car_endstation LIKE #{car_endstation} AND car_paymoney LIKE #{car_paymoney} AND car_starttime &gt;= #{car_starttime} AND car_endtime &lt;= #{car_endtime} AND car_station LIKE #{car_station} AND car_id LIKE #{car_id} ORDER BY car_id
+    </select>
+    <select id="BusCar_selpage" resultMap="BaseResultMap">
+         SELECT *
+        FROM businfo
+        WHERE car_startstation LIKE #{car_startstation} AND  car_endstation LIKE #{car_endstation} AND car_paymoney LIKE #{car_paymoney} AND car_starttime &gt;= #{car_starttime} AND car_endtime &lt;= #{car_endtime} AND car_station LIKE #{car_station} AND car_id LIKE #{car_id} ORDER BY car_id
+        limit #{page},15
+    </select>
+
+</mapper>

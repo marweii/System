@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiangqn.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.jiangqn.model.User">
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+
+  <select id="login" resultMap="BaseResultMap">
+    SELECT *
+    FROM users
+    WHERE account = #{account} AND password = #{password}
+  </select>
+  <select id="register_sel" resultMap="BaseResultMap">
+    SELECT *
+    FROM users
+    WHERE account = #{account} OR  name = #{name}
+  </select>
+<insert id="register_ins">
+  INSERT INTO users(account, password, name) VALUES (#{account},#{password} , #{name});
+</insert>
+  <update id="revisepass">
+    UPDATE users
+    SET password = #{password}
+    WHERE account = #{account}
+  </update>
+  <update id="changeuser">
+    UPDATE users
+    SET name = #{name},pictureurl = #{pictureurl}
+    WHERE account = #{account}
+  </update>
+</mapper>
